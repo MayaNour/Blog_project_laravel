@@ -17,21 +17,17 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome', [
-        'posts' => App\Post::take(4)->get(),
-        'page' => 1
+        'posts' => App\Post::take(4)->get()
     ]);
 })->name('home');
 
 Auth::routes();
 
-// Route::get('/posts', function () {
-//     $posts = App\Post::latest()->get();
-
-//     return view('welcome', [
-//         'posts' => $posts,
-//         'page' => 2
-//     ]);
-// })->name('posts.all');
+Route::get('/posts', function () {
+    return view('posts.index', [
+        'posts' => App\Post::latest()->get()
+    ]);
+})->name('posts.all');
 
 // Route::get('/posts/user', function () {
 //     $posts = App\Post::where('user_id', Auth::id())->get();
@@ -44,10 +40,10 @@ Auth::routes();
 
 // Route::get('/posts/delete/{post}', 'PostsController@destroy')->name('posts.delete');
 // Route::get('/posts/edit/{post}', 'PostsController@edit')->name('posts.edit');
-// Route::put('/posts/{post}', 'PostsController@update')->name('posts.update');
+//Route::put('/posts/{post}', 'PostsController@update')->name('posts.update');
 // Route::post('/posts', 'PostsController@store')->name('posts.index');
 // Route::get('/create', 'PostsController@create')->name('posts.create');
-// Route::get('/posts/{post}', 'PostsController@show')->name('posts.show');
+Route::get('/posts/{post}', 'PostsController@show')->name('posts.show');
 
 // Route::post('/comments', 'CommentsController@store')->name('comments.add');
 // Route::get('/comments/delete/{comment}', 'CommentsController@destroy')->name('comments.delete');
