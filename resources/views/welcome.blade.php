@@ -6,7 +6,7 @@
   <div id="banner-wrapper">
     <div id="banner" class="container">
       <h2>First Blog</h2>
-      <p>This is <strong>First blog project</strong>, a project done by <a href="https://www.linkedin.com/in/maya-noor-allah/" rel="nofollow">Maya Nour Alah</a>, in her way to learn more about back end development, especially PHP language and Laravel framework</p>
+      <p>This is <strong>First blog project</strong>, a project done by <strong><a href="https://www.linkedin.com/in/maya-noor-allah/" rel="nofollow">Maya Nour Alah</a></strong>, in her way to learn more about back end development, especially PHP language and Laravel framework</p>
       <a href="{{ route('posts.all') }}" class="button">All posts</a> </div>
   </div>
 </div>  
@@ -33,7 +33,7 @@
             @foreach ($post->tags as $tag)
             <a href="/tags/{{ $tag->id }}"> #{{ $tag->name }}</a>
             @endforeach
-            <p>written by <a href="/posts/users/{{ $post->user->id }}"><strong> {{ $post->user->name   }}</strong></a>, {{ $post->created_at }}</p>
+            <p>written by <a href="{{ route('posts.user', ['user'=> $post->user->id ]) }}"><strong> {{ $post->user->name   }}</strong></a>, {{ $post->created_at }}</p>
             <p>{{ $post->body }}</p>
             <a href="/posts/{{ $post->id }}"><u><b>read more</b></u></a>
             @if (Auth::id() == $post->user->id)
@@ -46,4 +46,5 @@
         @endforeach
       </ul>
     </div>
+    @include('tags')
 @endsection

@@ -307,7 +307,7 @@ ul.contact li a.icon-rss:before
 {
 	display: inline-block;
 	padding: 1.3em 3em;
-	background: #1c5ab0;
+	background: rgba(0,0,0);;
 	border-radius: 30px;
 	-moz-transition: opacity 0.25s ease-in-out;
 	-webkit-transition: opacity 0.25s ease-in-out;
@@ -323,7 +323,8 @@ ul.contact li a.icon-rss:before
 
 .button:hover
 {
-	background: #1757ae;
+	background: rgba(26, 141, 55);
+	color: rgba(0, 0, 0);
 }
 
 .button:active
@@ -368,7 +369,7 @@ ul.contact li a.icon-rss:before
 	
 #header-wrapper
 {
-	background: #2b2b2b url(images/banner.jpg) no-repeat center;
+	background: #2b2b2b url(/images/background.jpg) no-repeat center;
 	background-size: auto 100%;
 }
 
@@ -460,7 +461,7 @@ ul.contact li a.icon-rss:before
 	font-size: 1em;
 	text-transform: uppercase;
 	outline: 0;
-	color: #FFF;
+	color: rgba(26, 141, 55);
 }
 
 #menu li:hover a, #menu li.active a, #menu li.active span
@@ -469,9 +470,9 @@ ul.contact li a.icon-rss:before
 
 #menu .current_page_item a
 {
-	background: #1757ae;
+	background: rgba(255, 255, 255);
 	border-radius: 30px;
-	color: #FFF;
+	color: rgba(26, 141, 55);
 }
 
 /*********************************************************************************/
@@ -495,13 +496,13 @@ ul.contact li a.icon-rss:before
 	overflow: hidden;
 	width: 1000px;
 	text-align: center;
-	color: rgba(255,255,255,.7);
+	color: rgb(0, 0, 0);
 	font-size: 1.5em;
 }
 
 #banner a
 {
-	color: rgba(255,255,255,.9);
+	color: rgba(255, 255, 255);
 }
 
 #banner h2
@@ -509,7 +510,7 @@ ul.contact li a.icon-rss:before
 	padding-bottom: 0.50em;
 	font-weight: 400;
 	font-size: 3em;
-	color: #FFF;
+	color: rgb(0, 0, 0);
 }
 
 #banner .button
@@ -518,9 +519,9 @@ ul.contact li a.icon-rss:before
 	border-radius: 50px;
 }
 
-#banner strong
+#banner strong a
 {
-	color: #FFF;
+	color: rgba(26, 141, 55);
 }
 
 #banner span

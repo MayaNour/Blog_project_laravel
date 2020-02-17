@@ -62,3 +62,5 @@ Route::get('/tags/{tag}', 'TagsController@index')->name('tags.index');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/adminpanel', 'AdminPanelController@index')->name('adminpanel');
