@@ -1,5 +1,6 @@
 @extends('layout')
 
+@if ($page_no == 1)
 @section('header')
 <div id="header-featured">
   <div id="banner-wrapper">
@@ -9,39 +10,40 @@
       <a href="{{ route('posts.all') }}" class="button">All posts</a> </div>
   </div>
 </div>  
-@endsection
+@endsection    
+@endif
 
 @section('content')
-<div id="wrapper">
-	<div id="page" class="container">
 		<div id="content">
-      <h1>Recent posts</h1>
+      @if ($page_no == 1)
+        <h1>Recent posts</h1>
+      @elseif($page_no == 2)
+        <h1>All posts</h1>  
+      @elseif($page_no == 3)
+        <h1>My posts</h1>
+      @elseif($page_no == 4)
+        <h1>{{ $user_name }} posts</h1>
+      @elseif($page_no == 5)
+        <h1>{{ $tag_name }} posts</h1>
+      @endif
 			<ul class="style1">
         @foreach ($posts as $post)
           <li>
             <h3>{{ $post->title }}</h3>
-            <p>written by <a href=""><strong>{{ $post->user->name }}</strong></a>, {{ $post->created_at }}</p>
-            <p>{{ $postpost->body }}</p>
-            <a href="/posts/{{ $->id }}"><u><b>read more</b></u></a>
+            @foreach ($post->tags as $tag)
+            <a href="/tags/{{ $tag->id }}"> #{{ $tag->name }}</a>
+            @endforeach
+            <p>written by <a href="/posts/users/{{ $post->user->id }}"><strong> {{ $post->user->name   }}</strong></a>, {{ $post->created_at }}</p>
+            <p>{{ $post->body }}</p>
+            <a href="/posts/{{ $post->id }}"><u><b>read more</b></u></a>
+            @if (Auth::id() == $post->user->id)
+              <div>
+                <a href="/posts/edit/{{ $post->id }}">edit</a>
+                <a href="/posts/delete/{{ $post->id }}">delete</a>
+              </div>
+            @endif
           </li>    
         @endforeach
       </ul>
     </div>
-    <div id="sidebar">
-      <div id="stwo-col">
-        <div class="sbox1">
-          <h2>Category</h2>
-          <ul class="style2">
-            <li><a href="#">Semper quis egetmi dolore</a></li>
-            <li><a href="#">Quam turpis feugiat dolor</a></li>
-            <li><a href="#">Amet ornare hendrerit lectus</a></li>
-            <li><a href="#">Quam turpis feugiat dolor</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-		</div>
-	</div>
-</div>
-    
 @endsection
