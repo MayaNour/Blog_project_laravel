@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdminPanel extends Model
 {
-    //
+    protected $fillable = ['UserCount', 'perMonth'];
+
 }

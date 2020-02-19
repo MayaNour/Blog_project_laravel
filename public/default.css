@@ -104,13 +104,18 @@ a:hover
 /* List Styles                                                                   */
 /*********************************************************************************/
 
-	ul.style1
+#style1
+{
+	width: 300px;
+}
+	
+ul.style1
 {
 	margin: 0;
 	padding: 0em 0em 0em 0em;
 	overflow: hidden;
 	list-style: none;
-	color: #6c6c6c
+	color: #6c6c6c;
 }
 
 ul.style1 li
@@ -145,13 +150,17 @@ ul.style1 h3
 ul.style1 a
 {
 	text-decoration: none;
-	color: #525252;
+	color: rgba(26, 141, 55);
 }
 
 ul.style1 a:hover
 {
 	text-decoration: underline;
 	color: #525252;
+}
+
+ul.style1 #post_tag{
+	color : rgb(223, 48, 48);
 }
 
 ul.style2
@@ -370,7 +379,7 @@ ul.contact li a.icon-rss:before
 #header-wrapper
 {
 	background: #2b2b2b url(/images/background.jpg) no-repeat center;
-	background-size: auto 100%;
+	background-size: 100% 100%;
 }
 
 #header
@@ -413,7 +422,7 @@ ul.contact li a.icon-rss:before
 #logo a
 {
 	text-decoration: none;
-	color: #FFF;
+	color: #000000;
 }
 
 #logo .fa
@@ -497,7 +506,7 @@ ul.contact li a.icon-rss:before
 	width: 1000px;
 	text-align: center;
 	color: rgb(0, 0, 0);
-	font-size: 1.5em;
+	font-size: 1.7em;
 }
 
 #banner a
@@ -547,6 +556,8 @@ ul.contact li a.icon-rss:before
 	overflow: hidden;
 	padding: 6em 0em 6em 0em;
 	background: #FFF;
+	/* display: flex;
+	justify-content: space-between; */
 }
 
 #page .button

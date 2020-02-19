@@ -31,7 +31,7 @@
           <li>
             <h3>{{ $post->title }}</h3>
             @foreach ($post->tags as $tag)
-            <a href="/tags/{{ $tag->id }}"> #{{ $tag->name }}</a>
+            <a id="post_tag" href="/tags/{{ $tag->id }}"> #{{ $tag->name }}</a>
             @endforeach
             <p>written by <a href="{{ route('posts.user', ['user'=> $post->user->id ]) }}"><strong> {{ $post->user->name   }}</strong></a>, {{ $post->created_at }}</p>
             <p>{{ $post->body }}</p>

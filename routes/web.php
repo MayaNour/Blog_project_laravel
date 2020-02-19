@@ -58,9 +58,7 @@ Route::get('/comments/delete/{comment}', 'CommentsController@destroy')->name('co
 
 Route::get('/tags/{tag}', 'TagsController@index')->name('tags.index');
 
-// Route::get('/adminpanel', 'AdminPanelController@index')->name('adminpanel');
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/adminpanel', 'AdminPanelController@index')->name('adminpanel');
+Route::get('/adminpanel/chart', 'AdminPanelController@chart')->name('adminpanel.chart');
